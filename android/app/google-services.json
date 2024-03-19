@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "520000154548",
+    "project_id": "flappy-phi",
+    "storage_bucket": "flappy-phi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520000154548:android:c65f0e7fc27fad55cbe0e1",
+        "android_client_info": {
+          "package_name": "com.flappy.phi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520000154548-31un8gtmkddl490u9bbdoofgb2f89542.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flappy.phi",
+            "certificate_hash": "6c238f30108ba4d0208c5a5f2397c8c740db9982"
+          }
+        },
+        {
+          "client_id": "520000154548-jqaj1l7frup761m9bkialq3vrlh8olam.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAahZt3oIWnWgqvuRqFqoaJikiHx9_L7JM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520000154548-jqaj1l7frup761m9bkialq3vrlh8olam.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "520000154548-1fiedjadioq35lj9og36jcs1g3ncde9e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flappy.phi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

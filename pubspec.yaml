@@ -1,5 +1,5 @@
-name: flappy_bird_game
-description: A new Flutter project.
+name: flappy_phi
+description: Flappy Phi
 
 publish_to: 'none'
 
@@ -15,6 +15,14 @@ dependencies:
   cupertino_icons: ^1.0.2
   flame: ^1.10.0
   flame_audio: ^2.1.2
+  rename: ^3.0.1
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.15.3
+  google_fonts: ^6.1.0
+  get: ^4.6.6
+  flutter_svg: ^2.0.9
+  cloud_firestore: ^4.13.6
+  sqflite: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +40,10 @@ flutter:
     - assets/audio/
 
   fonts:
-    - family: Game     
+    - family: Game
       fonts:
         - asset: assets/fonts/Game.ttf
+    - family: PixelGameFont
+      fonts:
+      - asset: assets/fonts/PixelGameFont.ttf
+

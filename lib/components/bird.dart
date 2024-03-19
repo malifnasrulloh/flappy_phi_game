@@ -2,14 +2,16 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flame_audio/flame_audio.dart';
-import 'package:flappy_bird_game/game/bird_movement.dart';
-import 'package:flappy_bird_game/game/assets.dart';
-import 'package:flappy_bird_game/game/configuration.dart';
-import 'package:flappy_bird_game/game/flappy_bird_game.dart';
+import 'package:flappy_phi/controllers/firebase/account_controller.dart';
+import 'package:flappy_phi/controllers/firebase/firestore_controller.dart';
+import 'package:flappy_phi/game/bird_movement.dart';
+import 'package:flappy_phi/game/assets.dart';
+import 'package:flappy_phi/game/configuration.dart';
+import 'package:flappy_phi/game/flappy_phi_game.dart';
 import 'package:flutter/material.dart';
 
 class Bird extends SpriteGroupComponent<BirdMovement>
-    with HasGameRef<FlappyBirdGame>, CollisionCallbacks {
+    with HasGameRef<FlappyPhiGame>, CollisionCallbacks {
   Bird();
 
   int score = 0;
@@ -65,12 +67,19 @@ class Bird extends SpriteGroupComponent<BirdMovement>
     gameOver();
   }
 
-  void reset() {
+  Future<void> reset() async {
     position = Vector2(50, gameRef.size.y / 2 - size.y / 2);
     score = 0;
   }
 
   void gameOver() {
+    if (AccountController.currentUserData['high_score'] == null ||
+        score > AccountController.currentUserData['high_score']) {
+      print("masukkk");
+      FirestoreController.storeData(
+              AccountController.currentUser.uid, {'high_score': score})
+          .then((value) => null);
+    }
     FlameAudio.play(Assets.collision);
     game.isHit = true;
     gameRef.overlays.add('gameOver');

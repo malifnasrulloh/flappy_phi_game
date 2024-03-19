@@ -1,20 +1,23 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
-import 'package:flappy_bird_game/game/assets.dart';
-import 'package:flappy_bird_game/game/configuration.dart';
-import 'package:flappy_bird_game/game/flappy_bird_game.dart';
-import 'package:flappy_bird_game/game/pipe_position.dart';
+import 'package:flappy_phi/components/question.dart';
+import 'package:flappy_phi/game/assets.dart';
+import 'package:flappy_phi/game/configuration.dart';
+import 'package:flappy_phi/game/flappy_phi_game.dart';
+import 'package:flappy_phi/game/pipe_position.dart';
+import 'package:flutter/rendering.dart';
 
-class Pipe extends SpriteComponent with HasGameRef<FlappyBirdGame> {
-  Pipe({
-    required this.pipePosition,
-    required this.height,
-  });
+class Pipe extends SpriteComponent with HasGameRef<FlappyPhiGame> {
+  Pipe(
+      {required this.pipePosition,
+      required this.height,
+      required this.isAnswer});
 
   @override
   final double height;
   final PipePosition pipePosition;
+  final bool isAnswer;
 
   @override
   Future<void> onLoad() async {
@@ -32,7 +35,27 @@ class Pipe extends SpriteComponent with HasGameRef<FlappyBirdGame> {
         sprite = Sprite(pipe);
         break;
     }
-
-    add(RectangleHitbox());
+    if (isAnswer) {
+      add(TextComponent(
+          text: Question.answer.toString(),
+          position: Vector2(
+              size.x / 4 - (Question.answer.toString().length * 12),
+              (gameRef.size.y - Config.groundHeight) / 4),
+          textRenderer: TextPaint(
+              style:
+                  const TextStyle(fontFamily: "PixelGameFont", fontSize: 48))));
+    } else {
+      addAll([
+        RectangleHitbox(),
+        TextComponent(
+            text: Question.wrongAnswer.toString(),
+            position: Vector2(
+                size.x / 4 - (Question.wrongAnswer.toString().length * 12),
+                (gameRef.size.y - Config.groundHeight) / 4),
+            textRenderer: TextPaint(
+                style:
+                    const TextStyle(fontFamily: "PixelGameFont", fontSize: 48)))
+      ]);
+    }
   }
 }

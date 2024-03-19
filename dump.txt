@@ -1,0 +1,22 @@
+Platform  Firebase App Id
+web       1:520000154548:web:418cf489706ddbedcbe0e1
+android   1:520000154548:android:c65f0e7fc27fad55cbe0e1
+ios       1:520000154548:ios:593560f85bfa96f5cbe0e1
+macos     1:520000154548:ios:382db7579bc9fab0cbe0e1
+
+
+Alias name: androiddebugkey
+Creation date: Sep 26, 2023
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: C=US, O=Android, CN=Android Debug
+Issuer: C=US, O=Android, CN=Android Debug
+Serial number: 1
+Valid from: Tue Sep 26 11:43:54 WIB 2023 until: Thu Sep 18 11:43:54 WIB 2053
+Certificate fingerprints:
+         SHA1: 6C:23:8F:30:10:8B:A4:D0:20:8C:5A:5F:23:97:C8:C7:40:DB:99:82
+         SHA256: A1:A0:40:83:44:C1:13:5D:11:AE:17:D6:D2:DF:91:C4:73:49:25:9C:61:21:98:28:58:E7:64:DC:FB:C9:CF:3A
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 1
